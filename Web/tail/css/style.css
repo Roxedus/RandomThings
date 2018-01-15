@@ -70,3 +70,8 @@ a:visited {
 a:hover {
     color: white;
 }
+
+.email {
+    color: white !important;
+    text-decoration: underline;
+    }
