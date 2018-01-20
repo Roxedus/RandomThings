@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url(https://raw.githubusercontent.com/leram84/layer.Cake/master/Resources/blur-noise.png), url(https://raw.githubusercontent.com/leram84/layer.Cake/master/Resources/blur-dark.png);
     background-repeat: repeat, no-repeat;
     background-attachment: fixed, fixed;
@@ -10,8 +10,11 @@ body{
     padding-top: 0;
     padding-bottom: 30px;
     font-family: "Open Sans Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-.float {padding: 12em; }
+}
+
+.float {
+    padding: 12em;
+}
 
 .box {
     display: block;
@@ -28,21 +31,29 @@ body{
     float: left;
     display: block;
     padding-right: 5px;
-    }
+    width: 10%;
+}
 
-#don-text {
-    }
+.don-text {}
 
 .content {
-    overflow:hidden;
-    }
+    overflow: hidden;
+}
+
 .float #top-text {
     padding: 15px;
     background-color: #444546;
-    text-align:center;
+    text-align: center;
     text-transform: uppercase;
-    }
-p   {margin-right: 10px;}
-h1 , h2 ,h3 , p {
+}
+
+p {
+    margin-right: 10px;
+}
+
+h1,
+h2,
+h3,
+p {
     color: #FFF
-    }
+}

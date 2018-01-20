@@ -32,13 +32,11 @@ br {
     text-align: center;
 }
 
-#logo {
-    max-height: 4em;
-    width: auto;
+table {
     display: block;
+    float: left;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1em;
 }
 
 .center {
@@ -51,6 +49,15 @@ br {
 
 .service {
     padding-top: 1em;
+}
+
+#logo {
+    max-height: 4em;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
 }
 
 p {
@@ -74,4 +81,4 @@ a:hover {
 .email {
     color: white !important;
     text-decoration: underline;
-    }
+}
