@@ -50,7 +50,7 @@ def send_msg(ads_percentage_today, ads_blocked_today, dns_queries_today, domains
 				"queries_cached": int (queries_cached),
 				"clients_ever_seen": int (clients_ever_seen),
 				"unique_clients": int (unique_clients),
-				"status2": int(status)
+				"status": int(status)
                 }
             }
         ]
