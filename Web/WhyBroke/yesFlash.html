@@ -69,6 +69,8 @@
     br {
         color: #fff;
     }
+    
+    .arg {margin: 5%}
 
     .container {
         display: block;
@@ -91,8 +93,19 @@
         float: right;
     }
 
+
     .small {
         width: 30%;
+        -webkit-transition: -webkit-transform 0.4s;
+        transition: transform 0.4s;
+    }
+
+
+
+
+    .small:hover {
+        -webkit-transform: scale(1.8) rotate(0.01deg);
+        transform: scale(1.8) rotate(0.01deg);
     }
 
     .big {
@@ -133,8 +146,9 @@
         <a href="index.html">
             <h2 class="arg">Of course did Jon broke it</h2>
         </a>
-        <img src="img/yes.jpg" class="small">
-    </div>
+        <div class="resize">
+            <img src="img/yes.jpg" class="small">
+        </div>
 </body>
 
 </html>

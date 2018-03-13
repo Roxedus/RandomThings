@@ -1,4 +1,4 @@
-$scriptDir = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
+﻿$scriptDir = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 $url = "https://downloads.dell.com/FOLDER04358530M/1/Dell-Command-Update_X79N4_WIN_2.3.1_A00.EXE"
 $output = "$scriptDir\DCU_Setup.exe"
 $usbdir = "$scriptDir\DCU_Setup.exe"
