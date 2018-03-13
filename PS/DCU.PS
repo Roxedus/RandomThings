@@ -25,7 +25,7 @@ $exe=$usbdir
 }
 ElseIf (-Not $FileExists -eq $True) {
 Write-Host "$output does not exists"
-New-Item -ItemType directory -Path $scriptDir
+#New-Item -ItemType directory -Path $scriptDir
 cd $scriptDir
 echo "Downloading"
 Invoke-WebRequest -Uri $url -OutFile $output
