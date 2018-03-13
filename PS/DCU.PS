@@ -7,6 +7,12 @@ $start_time = Get-Date
 $pf86= "C:\Program Files (x86)"
 $FileExists = Test-Path $output
 $USBExists = Test-Path $usbdir
+$Name = (Get-WmiObject Win32_Computersystem).name
+$Logfile ="$scriptDir\$Name.log"
+
+Page_Load
+Start-Transcript -path $Logfile -append -NoClobber -IncludeInvocationHeader
+
 
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
@@ -20,7 +26,7 @@ $exe=$usbdir
 ElseIf (-Not $FileExists -eq $True) {
 Write-Host "$output does not exists"
 New-Item -ItemType directory -Path $scriptDir
-cd $WorkDir
+cd $scriptDir
 echo "Downloading"
 Invoke-WebRequest -Uri $url -OutFile $output
 $exe=$output
@@ -45,5 +51,8 @@ echo "Installer Complete"
 echo "Running Updater"
 & "$pf86\Dell\CommandUpdate\dcu-cli.exe"
 echo "Updater run"
+Write-Host "Machine will restart after pause"
 Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
 pause
+cmd /c shutdown /r /t 45
+Stop-Transcript
