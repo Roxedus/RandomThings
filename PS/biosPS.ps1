@@ -10,7 +10,6 @@ $USBExists = Test-Path $usbdir
 $Name = (Get-WmiObject Win32_Computersystem).name
 $Logfile ="$scriptDir\$Name.log"
 
-Page_Load
 Start-Transcript -path $Logfile -append -NoClobber -IncludeInvocationHeader
 
 
