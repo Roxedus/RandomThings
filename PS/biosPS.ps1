@@ -15,6 +15,8 @@ Start-Transcript -path $Logfile -append -NoClobber -IncludeInvocationHeader
 
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
+Stop-Service -DisplayName "Windows Audio"
+
 Write-Host "Checking if $output or $usbdir exits"
 
 If ($USBExists -eq $True) {
@@ -41,7 +43,7 @@ exit
 Write-Host "EXE=$exe"
 
 echo "Disabling BitLocker"
-Suspend-BitLocker -MountPoint "C:" -RebootCount 1
+Suspend-BitLocker -MountPoint "C:" -RebootCount 2
 echo "BitLocker disabled"
 echo "Running Installer"
 & $exe /s
@@ -52,6 +54,7 @@ echo "Running Updater"
 echo "Updater run"
 Write-Host "Machine will restart after pause"
 Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
-pause
+start-Service -DisplayName "Windows Audio"
+#pause
 cmd /c shutdown /r /t 45
 Stop-Transcript
