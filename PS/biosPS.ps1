@@ -13,9 +13,9 @@ $Logfile ="$scriptDir\$Name.log"
 Start-Transcript -path $Logfile -append -NoClobber -IncludeInvocationHeader
 
 
-#if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
-#Stop-Service -DisplayName "Windows Audio"
+Stop-Service -DisplayName "Windows Audio"
 
 Write-Host "Checking if $output or $usbdir exits"
 
@@ -29,7 +29,7 @@ Write-Host "$output does not exists"
 #New-Item -ItemType directory -Path $scriptDir
 cd $scriptDir
 echo "Downloading"
-#Invoke-WebRequest -Uri $url -OutFile $output
+Invoke-WebRequest -Uri $url -OutFile $output
 $exe=$output
 echo "Download complete"
 }
@@ -40,21 +40,22 @@ pause
 exit
 }
 
+$exe = $exe.replace('\\','\')
 Write-Host "EXE=$exe"
 
 echo "Disabling BitLocker"
-#Suspend-BitLocker -MountPoint "C:" -RebootCount 2
+Suspend-BitLocker -MountPoint "C:" -RebootCount 2
 echo "BitLocker disabled"
 echo "Running Installer"
 & $exe /s
-#Start-Sleep -s 10
+Start-Sleep -s 10
 echo "Installer Complete"
 echo "Running Updater"
-#& "$pf86\Dell\CommandUpdate\dcu-cli.exe"
+& "$pf86\Dell\CommandUpdate\dcu-cli.exe"
 echo "Updater run"
-Write-Host "Machine will restart after pause"
+Write-Host "Machine will restart"
 Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
-#start-Service -DisplayName "Windows Audio"
+start-Service -DisplayName "Windows Audio"
 #pause
-#cmd /c shutdown /r /t 45
+cmd /c shutdown /r /t 45
 Stop-Transcript
