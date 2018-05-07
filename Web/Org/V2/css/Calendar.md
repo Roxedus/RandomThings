@@ -1,23 +1,23 @@
 # Calendar
 
 ### WEEK TODAY Day M/D  
-![WEEK TODAY](img/calendar/Calendar-WEEK-TODAY-Day%20M_D.PNG)
+![img](img/calendar/WEEK-TODAY-Day-M_D.png)
 ```css
 th.fc-day-header.fc-widget-header.fc-today {
     background-color:red !important;
     }
 ```
 
-### MONTH TODAY D(ATE)  
-![img](img/calendar/Calendar-MONTH-TODAY-D_ATE_.png)
+### TODAY D(ATE)  
+![img](img/calendar/TODAY-D_ATE_.png)
 ```css
 td.fc-day-top.fc-today {
     background-color: red !important;
     }
 ```
 
-### MONTH TODAY whole today  
-![img](img/calendar/Calendar-MONTH-TODAY-whole-today.png)
+### TODAY whole today  
+![img](img/calendar/TODAY-whole-today.png)
 ```css
 .fc-widget-content.fc-today {
     background-color: red !important;
