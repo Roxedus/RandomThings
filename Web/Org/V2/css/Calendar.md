@@ -25,7 +25,7 @@ td.fc-day-top.fc-today {
 ```
 
 ### Header text
-[img](img/calendar/header-text.png)
+![img](img/calendar/header-text.png)
 ```css
 #calendar h2{
     color: red !important;
