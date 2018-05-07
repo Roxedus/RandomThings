@@ -9,7 +9,7 @@ th.fc-day-header.fc-widget-header.fc-today {
 ```
 
 ### MONTH TODAY D(ATE)  
-![MONTH TODAY](img/calendar/Calendar-MONTH-TODAY-D_ATE_.PNG)
+![img](img/calendar/Calendar-MONTH-TODAY-D_ATE_.png)
 ```css
 td.fc-day-top.fc-today {
     background-color: red !important;
@@ -17,9 +17,17 @@ td.fc-day-top.fc-today {
 ```
 
 ### MONTH TODAY whole today  
-![MONTH TODAY](img/calendar/Calendar-MONTH-TODAY-whole-today.PNG)
+![img](img/calendar/Calendar-MONTH-TODAY-whole-today.png)
 ```css
-.fc-day.fc-widget-content.fc-today.fc-state-highlight {
+.fc-widget-content.fc-today {
     background-color: red !important;
     }
+```
+
+### Header text
+[img](img/calendar/header-text.png)
+```css
+#calendar h2{
+    color: red !important;
+}
 ```
