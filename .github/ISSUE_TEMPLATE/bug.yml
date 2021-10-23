@@ -61,11 +61,6 @@ body:
       description: |
         Command used to create docker container
         Provide your docker create/run command or compose yaml snippet, or a screenshot of settings if using a gui to create the container
-      value: |
-        1.
-        2.
-        3.
-        ...
       render: bash
     validations:
       required: true
@@ -75,7 +70,7 @@ body:
         Provide a full docker log, output of "docker logs jellyfin"
       label: Docker logs
       placeholder: |
-        Outout of `docker logs jellyfin`
+        Output of `docker logs jellyfin`
       render: bash
     validations:
       required: true
