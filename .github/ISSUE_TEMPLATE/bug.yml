@@ -55,14 +55,12 @@ body:
         - armhf
     validations:
       required: true
-  - type: markdown
-    attributes:
-      value: |
-        Provide your docker create/run command or compose yaml snippet, or a screenshot of settings if using a gui to create the container
   - type: textarea
     attributes:
       label: Docker creation
-      description: "Command used to create docker container"
+      description: |
+        Command used to create docker container
+        Provide your docker create/run command or compose yaml snippet, or a screenshot of settings if using a gui to create the container
       value: |
         1.
         2.
@@ -71,12 +69,10 @@ body:
       render: bash
     validations:
       required: true
-  - type: markdown
-    attributes:
-      value: |
-        Provide a full docker log, output of "docker logs jellyfin"
   - type: textarea
     attributes:
+      description: |
+        Provide a full docker log, output of "docker logs jellyfin"
       label: Docker logs
       placeholder: |
         Outout of `docker logs jellyfin`
