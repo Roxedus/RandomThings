@@ -1,0 +1,9 @@
+LOAD DATABASE
+   FROM mysql://gitea:gitea@mariadb/Gitea
+   INTO postgresql://gitea:gitea@postgres14/gitea
+ALTER schema 'Gitea' rename to 'public'
+ALTER TABLE "session" ADD "created_unix" bigint NULL
+WITH data only
+CAST
+   type integer to bigint drop typemod
+;

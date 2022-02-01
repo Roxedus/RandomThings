@@ -1,1 +1,0 @@
-# [Github.io](https://si0972.github.io/RandomThings/Web)
