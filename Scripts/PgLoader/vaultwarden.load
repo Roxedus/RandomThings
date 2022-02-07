@@ -1,6 +1,6 @@
 load database
      from mysql://bitwarden:bitwarden@mariadb/Bitwarden
-     into postgresql://vaultwarden:vaultwarden@postgres14/vaultwarden
+     into postgresql://vaultwarden:vaultwarden@postgres/vaultwarden
      WITH data only, include no drop, reset sequences
      EXCLUDING TABLE NAMES MATCHING '__diesel_schema_migrations'
      ALTER SCHEMA 'Bitwarden' RENAME TO 'public'
